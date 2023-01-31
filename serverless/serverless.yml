@@ -1,0 +1,43 @@
+service: cognito-triggers
+
+useDotenv: true
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  region: ${env:REGION}
+  profile: default
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action: 'cognito-idp:ListUsers'
+          Resource: '${env:COGNITO_USER_POOL_ARN}'
+
+package:
+  patterns:
+    - '!.gitignore'
+
+functions:
+  pre_signup:
+    handler: ./src/pre_signup.handler
+    events:
+      - cognitoUserPool:
+          pool: ${env:COGNITO_USER_POOL_NAME}
+          trigger: PreSignUp
+          existing: true
+
+  custom_message:
+    handler: ./src/custom_message.handler
+    events:
+      - cognitoUserPool:
+          pool: ${env:COGNITO_USER_POOL_NAME}
+          trigger: CustomMessage
+          existing: true

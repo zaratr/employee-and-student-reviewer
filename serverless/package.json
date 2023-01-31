@@ -1,0 +1,19 @@
+{
+  "name": "cognito-triggers",
+  "version": "1.0.0",
+  "description": "Serverless framework project that contains aws cognito triggers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raul Zarate",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.67.0",
+    "dotenv": "^16.0.0",
+    "serverless-dotenv-plugin": "^4.12.2"
+  },
+  "devDependencies": {
+    "serverless-offline": "^8.5.0"
+  }
+}
