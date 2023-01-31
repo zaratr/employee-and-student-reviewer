@@ -61,13 +61,13 @@ export default function UserCard({ user, usertype }) {
         }
     };
      return (
-         <>
-             <li>
+             <li className={'d-flex flex-column w-25'}>
              <h3>{user}</h3>
                  {/*<h3>{user.name_user}</h3>*/}
                  {/*<p>{user.about_user}</p>*/}
                  {/*<small>{new Date(user.createdAt).toLocaleDateString()}</small>*/}
-                 <br />
+                 <div className={''}>
+
                  {!user.published ? (
                      <button type="button" onClick={() => publishUser(user._id)}>
                          {publishing ? 'Publishing' : 'Publish'}
@@ -76,7 +76,7 @@ export default function UserCard({ user, usertype }) {
                  <button type="button" onClick={() => deleteUser(user['_id'])}>
                      {deleting ? 'Deleting' : 'Delete'}
                  </button>
+                 </div>
              </li>
-         </>
      );
 }

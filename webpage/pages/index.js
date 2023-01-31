@@ -35,96 +35,81 @@ export default function Home({ api_auth_user, listOfData }) {
             Welcome to this Site!
           </h1>
 
-
-          <img src="/yellowJacket.jpg" alt="Hero-img"
-            style={{ maxWidth: '100%', height: 'auto' }} />
-
           <Footer />
         </main>
       </>
     )
   }
-  else {//(session)
+  else {//(session) - signed in user
     if (session.user.email.endsWith(process.env.NEXT_PUBLIC_STUDENT_EMAIL_ENDING)) {
       console.log("Session user", session.user.email);
 
       return (
-        <>
-          <main className='d-flex flex-column min-vh-100'>
-            <Header user={session.user.email} />
+       <>
+          <Header user={session.user.email} />
+          <main className=' min-vh-100'>
 
             <h1 className={index.header}>
               Welcome to the Website!
             </h1>
-            {console.log(api_auth_user)}
-            <Link href={{
+
+            <div className={''}>
+            <Link className={'d-flex justify-content-center'} href={{
               pathname: "/add-user",
               query: { usertype: api_auth_user }
             }}>
               Add to your list of Companies you want to view in Queue
             </Link>
 
-                    {/*<UserCard user={listOfData} key={i} usertype={api_auth_user} />*/}
-
-
-                    <div className="container">
+            <div className="container">
               {listOfData === null || listOfData.length === 0 ? (
-                <h2>No Selected Companies in Your Queue</h2>
+                <h2>No Students in Queue to take care of!</h2>
               ) : (
-                <ul>
+                <ul className={'d-flex justify-content-center'}>
                   {listOfData?.map((element, i) => (
                     <UserCard user={element.S} key={i} usertype={api_auth_user} />
                   ))}
                 </ul>
               )}
             </div>
-
-
-
-            <img src="/yellowJacket.jpg" alt="GA-Tech Mascot"
-              style={{ maxWidth: '100%', height: 'auto' }} />
+            </div>
 
             <Footer />
           </main>
         </>
-      );
-      //console.log("Student login")
+      )
     }
-    else {
+    else {//signed in as a employee
 
       return (
         <>
-          <main className='d-flex flex-column min-vh-100'>
-            <Header user={session.user.email} />
+          <Header user={session.user.email} />
+          <main className=' min-vh-100'>
 
             <h1 className={index.header}>
               Welcome to the Website!
             </h1>
-            {console.log(api_auth_user)}
-            <Link href={{
+
+            <div className={''}>
+            <Link className={'d-flex justify-content-center'} href={{
               pathname: "/add-user",
               query: { usertype: api_auth_user }
             }}>
               Change to Queue of Students in the list to visit with!
             </Link>
 
-
             <div className="container">
               {listOfData === null || listOfData.length === 0 ? (
                 <h2>No Students in Queue to take care of!</h2>
               ) : (
-                <ul>
+                <ul className={'d-flex justify-content-center'}>
                   {listOfData?.map((element, i) => (
                     <UserCard user={element.S} key={i} usertype={api_auth_user} />
                   ))}
                 </ul>
               )}
             </div>
-
-
-
-            <img src="/yellowJacket.jpg" alt="GA-Tech Mascot"
-              style={{ maxWidth: '100%', height: 'auto' }} />
+            </div>
 
             <Footer />
           </main>
