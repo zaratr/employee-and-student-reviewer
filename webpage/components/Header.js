@@ -32,16 +32,16 @@ function Header ({user}) {
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="/" className="nav-link px-2 text-secondary">
+              <Link className="nav-link px-2 text-secondary" href={{pathname: "/"}}>
                 <div className={login.homeTxt}>
                   Home
                 </div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="fullQueue" className="nav-link px-2 text-white">
+              <Link href={{pathname:"fullQueue"}} className="nav-link px-2 text-white">
                Full Queue
-              </a>
+              </Link>
             </li>
             {/* <li>
               <a href="#" className="nav-link px-2 text-white">
@@ -54,9 +54,9 @@ function Header ({user}) {
               </a>
             </li> */}
             <li>
-              <a href="studentQueue" className="nav-link px-2 text-white">
+              <Link href={{pathname:'studentQueue'}} className="nav-link px-2 text-white">
                 Enter Queue
-              </a>
+              </Link>
             </li>
             <li>
             </li>
