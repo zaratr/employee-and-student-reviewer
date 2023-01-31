@@ -1,0 +1,147 @@
+/* * {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "CustomFont";
+} */
+
+/* @font-face {
+    font-family: "CustomFont";
+    src: url("../");
+} */
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.coverer {
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 2em;
+    width: 30em;
+    height: 35em;
+    position: relative;
+    border-radius: 3em;
+    box-shadow: 0 0.190em 1.8em rgb(179, 163, 105);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.alt-login {
+    width: 80%;
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.altLogin div {
+    width: 35%;
+    height: 90%;
+    border-radius: 0.25em;
+    background-color: white;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.dont-have-an-account {
+    padding: 0px 0px 20px 0px;
+    margin-bottom: auto;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* .google {background-image: url("../icons/icons8-google-96.png");}
+ .facebook {background-image: url("../icons/icons8-facebook-96.png");}  */
+
+.cover>input[type=text] {
+    border: none;
+    background-color: rgb(229, 226, 226);
+    height: 4em;
+    width: 70%;
+    border-radius: 0.25em;
+    text-align: center;
+    padding: 2em;
+}
+
+.cover>input[type=password] {
+    border: none;
+    background-color: rgb(229, 226, 226);
+    height: 4em;
+    width: 70%;
+    border-radius: 0.25em;
+    text-align: center;
+    padding: 2em;
+}
+
+.cover>input:focus {
+    outline-color: rgb(179, 163, 105);
+    ;
+}
+
+.loginBtn {
+    width: 40%;
+    height: 3em;
+    background-color: rgb(179, 163, 105);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .1s;
+    border-radius: .20em;
+    cursor: pointer;
+}
+
+.loginBtn:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    position: relative;
+    bottom: -2em;
+}
+
+.hide {
+    position: absolute;
+    transform: scale(0);
+}
+
+.loginPopup {
+    position: absolute;
+    height: 20em;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .20em;
+    background-color: black;
+    color: white;
+    bottom: 2;
+    transform: scale(1);
+    transform: 1.5s;
+}
+
+
+
+/* ------ HEADER - BOOTSTRAP OVER-RIDE ------*/
+/* ------ NEED TO MOVE THIS TO A LANDING PAGE CSS FILE(THEN CHANGE THE CLASSNAMES THAT ARE USING 'login.'class Selector'')*/
+.header {
+    background-color: rgb(0, 48, 87);
+    padding: 1.5em;
+}
+
+.homeTxt {
+    color: rgb(234, 170, 0)
+}
+
+/* .popupStyle {
+
+} */
+

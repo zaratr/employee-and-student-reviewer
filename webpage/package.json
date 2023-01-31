@@ -1,0 +1,23 @@
+{
+  "name": "webpage",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.58.0",
+    "@aws-sdk/client-dynamodb": "^3.254.0",
+    "@aws-sdk/lib-dynamodb": "^3.254.0",
+    "bootstrap": "^5.2.2",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "next": "13.1.6",
+    "next-auth": "^4.17.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
